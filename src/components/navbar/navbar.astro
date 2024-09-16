@@ -42,20 +42,16 @@ const menuitems = [
     <!--<img src="\logo1.svg" alt="" width="25%" 
     height="100%" />-->
     <Astronav>
-      <div class="py-6 md:order 1  md:block">
+      
+
+      <div class="flex w-full lg:w-auto items-center justify-between">
         <Picture
         src={heroImage}
-        alt="Astronaut in the air"
-        widths={[200, 400, 600]}
-        sizes="(max-width: 800px) 100vw, 620px"
+        alt="Astronaut in the air"        
         loading="eager"
         format="avif"
         />
-      </div>
-
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        
-        <a href="/logo1.svg" class="text-lg"
+        <a href="/index.astro" class="text-lg"
           >
           <!--<span class="font-bold text-slate-800">Template</span><span
             class="text-slate-500"> site</span
