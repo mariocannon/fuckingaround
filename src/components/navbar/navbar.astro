@@ -3,6 +3,8 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Picture } from "astro:assets";
+import heroImage from "assets/logo1.svg";
 
 const menuitems = [
   /*{
@@ -36,11 +38,23 @@ const menuitems = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
-    <img src="\logo1.svg" alt="" width="25%" 
-    height="100%" />
+  <header class="flex flex-col lg:flex-row justify-between items-center my-1">
+    <!--<img src="\logo1.svg" alt="" width="25%" 
+    height="100%" />-->
     <Astronav>
+      <div class="py-6 md:order 1 hidden md:block">
+        <Picture
+        src={heroImage}
+          alt="Astronaut in the air"
+          widths={[2, 4, 60]}
+          sizes="(min-width: 60rem) 80vw"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+
       <div class="flex w-full lg:w-auto items-center justify-between">
+        
         <a href="/logo1.svg" class="text-lg"
           >
           <!--<span class="font-bold text-slate-800">Template</span><span
