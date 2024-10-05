@@ -1,13 +1,121 @@
+<!-- 
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
 
-<form class="max-w-sm mx-auto">
-  <label for="phone-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number:</label>
-  <div class="relative">
-      <div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
-          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 19 18">
-              <path d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"/>
-          </svg>
+    Create Access Key here 👉 https://web3forms.com/
+ -->
+
+ <section class="contact-section">
+    <div class="contact-intro">
+      <h2 class="contact-title">Get in Touch</h2>
+      <p class="contact-description">
+        Fill out the form below and we'll get back to you as soon as possible.
+      </p>
+    </div>
+  
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  
+      <input type="hidden" name="access_key" value="f3fd4e2f-f331-4900-b1eb-471132026d55" />
+      <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+      <input type="hidden" name="from_name" value="My Website" />
+      <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+  
+      <div class="form-group-container">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone</label>
+          <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+        </div>
       </div>
-      <input type="text" id="phone-input" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required />
-  </div>
-  <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Select a phone number that matches the format.</p>
-</form>
+      <button class="form-submit" type="submit">Send Message</button>
+    </form>
+  
+  </section>
+
+  <style>
+.contact-section {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem;
+}
+
+.contact-intro > * + * {
+  margin-top: 1rem;
+}
+
+.contact-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.contact-description {
+  color: rgb(107 114 128);
+}
+
+.form-group-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.form-input::placeholder,
+.form-textarea:focus-visible {
+  color: #6b7280;
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.form-textarea {
+  min-height: 120px;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 1.2rem;
+  background-color: #3124ca;
+  color: #fff;
+  padding: 13px 5px;
+  border-radius: 0.375rem;
+}
+
+
+  </style>
